@@ -36,7 +36,7 @@
         </address>
 
         <div class="header__bottom">
-          <div @click="openMenu">
+          <div @click="toggleMenu">
             <j-s-burger />
           </div>
           <j-s-logo />
@@ -88,8 +88,10 @@ export default {
     JSBurger
   },
   methods: {
-    openMenu() {
-      this.$store.dispatch(actionTypes.openMenu)
+    toggleMenu() {
+      return this.$store.state.mobileMenu.isOpen
+        ? this.$store.dispatch(actionTypes.closeMenu)
+        : this.$store.dispatch(actionTypes.openMenu)
     },
     scrollToSection(node) {
       const section = document.querySelector(node)

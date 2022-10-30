@@ -1,14 +1,5 @@
 <template>
   <div class="mobile-menu" :class="{'mobile-menu--active': isOpen}">
-    <div class="mobile-menu__header">
-      <div @click="closeMenu">
-        <j-s-logo class="mobile-menu__logo" />
-      </div>
-      <div @click="closeMenu">
-        <j-s-close />
-      </div>
-    </div>
-
     <ul class="mobile-menu__list">
       <li class="mobile-menu__item" @click="closeMenu">
         <router-link class="mobile-menu__link animation" :to="{name: 'price'}">
@@ -67,16 +58,12 @@
 </template>
 
 <script>
-import JSLogo from '@/components/Logo'
-import JSClose from '@/components/Buttons/Close'
 import JSSocial from '@/components/Social'
 import {mapState} from 'vuex'
 import {actionTypes} from '@/store/modules/mobileMenu'
 export default {
   name: 'JSMobileMenu',
   components: {
-    JSLogo,
-    JSClose,
     JSSocial
   },
   computed: {
@@ -100,7 +87,7 @@ export default {
 
 <style lang="scss" scoped>
 .mobile-menu {
-  padding: 15px;
+  padding: 85px 15px 15px;
   position: fixed;
   border: 1px solid $black;
   background-color: $purple;
