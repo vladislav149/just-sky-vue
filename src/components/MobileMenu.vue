@@ -101,7 +101,7 @@ export default {
 <style lang="scss" scoped>
 .mobile-menu {
   padding: 15px;
-  position: absolute;
+  position: fixed;
   border: 1px solid $black;
   background-color: $purple;
   width: 300px;

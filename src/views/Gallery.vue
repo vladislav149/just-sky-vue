@@ -1,5 +1,5 @@
 <template>
-  <div class="gallery">
+  <section class="gallery">
     <div class="container">
       <div class="gallery__inner">
         <ul class="gallery__list-main">
@@ -55,7 +55,7 @@
         </ul>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

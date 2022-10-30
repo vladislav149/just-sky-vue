@@ -102,7 +102,12 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  padding-bottom: 10px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  background-color: white;
+  z-index: 100;
 
   &__navigation {
     @include w768 {

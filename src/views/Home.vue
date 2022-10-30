@@ -135,6 +135,14 @@ export default {
   background-size: cover;
   position: relative;
   z-index: 1;
+  margin-top: -170px;
+  @include w992 {
+    margin-top: -240px;
+  }
+
+  @include w768 {
+    margin-top: -100px;
+  }
 
   &::after {
     content: '';
@@ -148,17 +156,9 @@ export default {
   }
 
   &__inner {
-    min-height: calc(100vh - 177px);
+    min-height: 100vh;
     display: flex;
     align-items: center;
-
-    @include w768 {
-      min-height: calc(100vh - 95px);
-    }
-
-    @include w576 {
-      min-height: calc(100vh - 92px);
-    }
   }
 
   &__title {

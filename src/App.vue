@@ -80,6 +80,14 @@ body {
 
 .main {
   margin-bottom: auto;
+  padding-top: 170px;
+  @include w992 {
+    padding-top: 240px;
+  }
+
+  @include w768 {
+    padding-top: 100px;
+  }
 }
 
 .container {
