@@ -17,12 +17,12 @@
             </div>
 
             <div class="address__container">
-              <button
+              <router-link
                 class="address__info address__info--address animation-icon"
-                @click="scrollToSection('.footer')"
+                :to="{hash: '#footer'}"
               >
                 ул. Морских Пехотинцев, 10А
-              </button>
+              </router-link>
 
               <a
                 class="address__info address__info--phone animation-icon"
@@ -56,9 +56,11 @@
                 галерея
               </router-link>
             </li>
-
-            <li class="header__item" @click="scrollToSection('.we-have')">
-              <router-link class="header__link animation" :to="{name: 'home'}">
+            <li class="header__item">
+              <router-link
+                class="header__link animation"
+                :to="{name: 'home', hash: '#we-have'}"
+              >
                 что у нас есть
               </router-link>
             </li>
@@ -92,11 +94,6 @@ export default {
       return this.$store.state.mobileMenu.isOpen
         ? this.$store.dispatch(actionTypes.closeMenu)
         : this.$store.dispatch(actionTypes.openMenu)
-    },
-    scrollToSection(node) {
-      const section = document.querySelector(node)
-      const sectionPosition = section.getBoundingClientRect()
-      window.scrollTo(0, sectionPosition.top)
     }
   }
 }

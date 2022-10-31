@@ -9,7 +9,7 @@
         </div>
       </div>
     </section>
-    <section class="we-have">
+    <section class="we-have" id="we-have">
       <div class="container">
         <div class="we-have__inner">
           <h2 class="we-have__title title">что у нас есть</h2>
@@ -174,7 +174,7 @@ export default {
 }
 
 .we-have {
-  padding: 60px 0 30px;
+  padding: 70px 0 30px;
 
   &__title {
     text-align: center;

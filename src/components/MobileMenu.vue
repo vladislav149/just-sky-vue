@@ -16,8 +16,11 @@
         </router-link>
       </li>
 
-      <li class="mobile-menu__item" @click="scrollToSection('.we-have')">
-        <router-link class="header__link animation" :to="{name: 'home'}">
+      <li class="mobile-menu__item" @click="closeMenu">
+        <router-link
+          class="header__link animation"
+          :to="{name: 'home', hash: '#we-have'}"
+        >
           что у нас есть
         </router-link>
       </li>
@@ -40,19 +43,14 @@
         10:00-22:00 по&nbsp;выходным
       </span>
 
-      <button
-        class="address__info address__info--address address__info--mobile animation-icon"
-        @click="scrollToSection('.footer')"
-      >
-        ул. Морских Пехотинцев, 10А
-      </button>
-
-      <a
-        class="address__info address__info--phone address__info--mobile animation-icon"
-        href="tel:+79669172670"
-      >
-        8 (996) 917-26-70
-      </a>
+      <div @click="closeMenu">
+        <router-link
+          class="address__info address__info--address address__info--mobile animation-icon"
+          :to="{hash: '#footer'}"
+        >
+          ул. Морских Пехотинцев, 10А
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -74,12 +72,6 @@ export default {
   methods: {
     closeMenu() {
       this.$store.dispatch(actionTypes.closeMenu)
-    },
-    scrollToSection(node) {
-      this.closeMenu()
-      const section = document.querySelector(node)
-      const sectionPosition = section.getBoundingClientRect()
-      window.scrollTo(0, sectionPosition.top)
     }
   }
 }
@@ -191,10 +183,6 @@ export default {
       &::before {
         background-image: url(@/assets/images/icons/location.svg);
       }
-    }
-
-    &--phone::before {
-      background-image: url(@/assets/images/icons/phone.svg);
     }
 
     &--time::after {
