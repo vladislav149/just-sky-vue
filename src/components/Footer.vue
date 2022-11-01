@@ -14,7 +14,7 @@
               ул. Морских Пехотинцев, 10А
             </p>
 
-            <a class="footer__phone animation-icon" href="tel:+79669172670"
+            <a class="footer__phone animation-icon" href="tel:+79969172670"
               ><span class="footer__text">Телефон: </span>8 (996) 917-26-70
             </a>
 

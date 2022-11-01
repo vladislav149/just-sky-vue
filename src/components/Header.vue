@@ -26,7 +26,7 @@
 
               <a
                 class="address__info address__info--phone animation-icon"
-                href="tel:+79669172670"
+                href="tel:+79969172670"
               >
                 8 (996) 917-26-70
               </a>
