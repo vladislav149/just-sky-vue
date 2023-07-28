@@ -1,10 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/Home'
-import Price from '@/views/Price'
-import Gallery from '@/views/Gallery'
-import Rules from '@/views/Rules'
-import PageNotFound from '@/views/PageNotFound'
 
 Vue.use(VueRouter)
 
@@ -12,27 +7,27 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: () => import('@/views/Home')
   },
   {
     path: '/price',
     name: 'price',
-    component: Price
+    component: () => import('@/views/Price')
   },
   {
     path: '/gallery',
     name: 'gallery',
-    component: Gallery
+    component: () => import('@/views/Gallery')
   },
   {
     path: '/rules',
     name: 'rules',
-    component: Rules
+    component: () => import('@/views/Rules')
   },
   {
     path: '*',
     name: 'pageNotFound',
-    component: PageNotFound
+    component: () => import('@/views/PageNotFound')
   }
 ]
 

@@ -2,140 +2,26 @@
   <section class="our-prices">
     <div class="container">
       <div class="our-prices__inner">
-        <h2 class="our-prices__title title">price list<sup>*</sup></h2>
-        <h3 class="our-prices__subtitle">свободное посещение</h3>
+        <h2 class="our-prices__title title">price&nbsp;list<sup>*</sup></h2>
+        <article
+          v-for="price in prices"
+          :key="price.id"
+        >
+          <h3 class="our-prices__subtitle">{{ price.title }}</h3>
 
-        <ul class="our-prices__list">
-          <li class="our-prices__item">
-            <span class="our-prices__text">30 минут</span>
-            <span class="our-prices__price">200₽</span>
-          </li>
-          <li class="our-prices__item">
-            <span class="our-prices__text">1 час</span>
-            <span class="our-prices__price">300₽</span>
-          </li>
-          <li class="our-prices__item">
-            <span class="our-prices__text">2 час</span>
-            <span class="our-prices__price">500₽</span>
-          </li>
-          <li class="our-prices__item">
-            <span class="our-prices__text">безлимит</span>
-            <span class="our-prices__price">700₽</span>
-          </li>
-          <li class="our-prices__item">
-            <span class="our-prices__text">безлимит на ночь</span>
-            <span class="our-prices__price">500₽</span>
-          </li>
-        </ul>
-
-        <h3 class="our-prices__subtitle">тренировки</h3>
-
-        <ul class="our-prices__list">
-          <li class="our-prices__item">
-            <span class="our-prices__text">
-              персональная тренировка с тренером
-            </span>
-            <span class="our-prices__price">500₽</span>
-          </li>
-        </ul>
-
-        <h3 class="our-prices__subtitle">абонементы</h3>
-        <ul class="our-prices__list">
-          <li class="our-prices__item">
-            <span class="our-prices__text">
-              абонемент на свободные посещения (30&nbsp;дней)
-            </span>
-            <span class="our-prices__price">3000₽</span>
-          </li>
-          <li class="our-prices__item">
-            <span class="our-prices__text">
-              абонемент на ночь (4&nbsp;посещения)
-            </span>
-            <span class="our-prices__price">1800₽</span>
-          </li>
-          <li class="our-prices__item">
-            <span class="our-prices__text">
-              абонемент с тренером (8&nbsp;посещений)
-            </span>
-            <span class="our-prices__price">2000₽</span>
-          </li>
-          <li class="our-prices__item">
-            <span class="our-prices__text">
-              абонемент с тренером (12&nbsp;посещений)
-            </span>
-            <span class="our-prices__price">3000₽</span>
-          </li>
-          <li class="our-prices__item">
-            <span class="our-prices__text">
-              <span class="new">new</span>
-              фитнес на батутах (12&nbsp;посещений)
-            </span>
-            <span class="our-prices__price">1000₽</span>
-          </li>
-        </ul>
-
-        <h3 class="our-prices__subtitle">аренды</h3>
-
-        <ul class="our-prices__list">
-          <li class="our-prices__item">
-            <span class="our-prices__text"> аренда зала на 1 час </span>
-            <span class="our-prices__price">4000₽</span>
-          </li>
-          <li class="our-prices__item">
-            <span class="our-prices__text"> аренда зала на 2 часа </span>
-            <span class="our-prices__price">7000₽</span>
-          </li>
-          <li class="our-prices__item">
-            <span class="our-prices__text">
-              аренда зала на всю ночь (23:00-7:00)
-            </span>
-            <span class="our-prices__price">7000₽</span>
-          </li>
-          <li class="our-prices__item">
-            <span class="our-prices__text">
-              аренда зала на весь день (12:00-22:00)
-            </span>
-            <span class="our-prices__price">20000₽</span>
-          </li>
-        </ul>
-
-        <h3 class="our-prices__subtitle">анимационные программы</h3>
-
-        <ul class="our-prices__list">
-          <li class="our-prices__item">
-            <span class="our-prices__text">1 час</span>
-            <span class="our-prices__price">2500₽</span>
-          </li>
-          <li class="our-prices__item">
-            <span class="our-prices__text">2 час</span>
-            <span class="our-prices__price">4500₽</span>
-          </li>
-        </ul>
-
-        <h3 class="our-prices__subtitle">теннисный стол</h3>
-
-        <ul class="our-prices__list">
-          <li class="our-prices__item">
-            <span class="our-prices__text">30 минут</span>
-            <span class="our-prices__price">50₽</span>
-          </li>
-          <li class="our-prices__item">
-            <span class="our-prices__text">1 час</span>
-            <span class="our-prices__price">100₽</span>
-          </li>
-        </ul>
-        <h3 class="our-prices__subtitle">playstation 4</h3>
-
-        <ul class="our-prices__list">
-          <li class="our-prices__item">
-            <span class="our-prices__text">30 минут</span>
-            <span class="our-prices__price">100₽</span>
-          </li>
-          <li class="our-prices__item">
-            <span class="our-prices__text">1 час</span>
-            <span class="our-prices__price">200₽</span>
-          </li>
-        </ul>
+          <ul class="our-prices__list">
+            <li
+              class="our-prices__item"
+              v-for="item in price.list"
+            >
+              <span
+                class="our-prices__text"
+                v-html="item.text"
+              />
+              <span class="our-prices__price">{{ item.price }}</span>
+            </li>
+          </ul>
+        </article>
         <p>* - Ежедневно проходят акции и скидки, следите за нашим instagram</p>
       </div>
     </div>
@@ -144,7 +30,143 @@
 
 <script>
 export default {
-  name: 'JSPrice'
+  name: 'JSPrice',
+  data() {
+    return {
+      prices: [
+        {
+          id: 0,
+          title: 'свободное посещение',
+          list: [
+            {
+              text: '30 минут',
+              price: '250₽'
+            },
+            {
+              text: '1 час',
+              price: '350₽'
+            },
+            {
+              text: '2 час',
+              price: '600₽'
+            },
+            {
+              text: 'безлимит',
+              price: '800₽'
+            }
+          ]
+        },
+        {
+          id: 1,
+          title: 'тренировки с тренером',
+          list: [
+            {
+              text: '30 минут',
+              price: '600₽'
+            },
+            {
+              text: '1 час',
+              price: '900₽'
+            },
+            {
+              text: '2 часа',
+              price: '1400₽'
+            }
+          ]
+        },
+        {
+          id: 2,
+          title: 'абонементы',
+          list: [
+            {
+              text: 'абонемент на свободные посещения (30&nbsp;дней)',
+              price: '3500₽'
+            },
+            {
+              text: 'абонемент с тренером (8&nbsp;занятий)',
+              price: '2500₽'
+            },
+            {
+              text: 'абонемент с тренером (12&nbsp;занятий)',
+              price: '3500₽'
+            }
+          ]
+        },
+        {
+          id: 3,
+          title: 'аренда',
+          list: [
+            {
+              text: 'аренда зала на 1 час',
+              price: '5000₽'
+            },
+            {
+              text: 'аренда зала на 2 часа',
+              price: '8000₽'
+            },
+            {
+              text: 'каждый следующий час',
+              price: '+3000₽'
+            },
+            {
+              text: 'аренда зала на всю ночь (23:00-7:00)',
+              price: '5000₽'
+            },
+            {
+              text: 'аренда зала на весь день (12:00-22:00)',
+              price: "20'000₽"
+            }
+          ]
+        },
+        {
+          id: 5,
+          title: 'теннисный стол',
+          list: [
+            {
+              text: '30 минут',
+              price: '50₽'
+            },
+            {
+              text: '1 час',
+              price: '100₽'
+            }
+          ]
+        },
+        {
+          id: 6,
+          title: 'playstation 4',
+          list: [
+            {
+              text: '30 минут',
+              price: '100₽'
+            },
+            {
+              text: '1 час',
+              price: '200₽'
+            }
+          ]
+        },
+        {
+          id: 7,
+          title: 'напитки',
+          list: [
+            {
+              text: 'чай',
+              price: '50₽'
+            },
+            {
+              text: 'кофе американо',
+              price: '100₽'
+            },
+            {
+              text: 'сертификат на безлимитный кофе',
+              price: '500₽'
+            }
+          ]
+        }
+      ]
+    }
+  }
 }
 </script>
 

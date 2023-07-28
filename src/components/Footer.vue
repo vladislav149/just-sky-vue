@@ -1,5 +1,8 @@
 <template>
-  <footer class="footer" id="footer">
+  <footer
+    class="footer"
+    id="footer"
+  >
     <div class="container">
       <div class="footer__inner">
         <div class="footer__contacts">
@@ -14,7 +17,9 @@
               ул. Морских Пехотинцев, 10А
             </p>
 
-            <a class="footer__phone animation-icon" href="tel:+79969172670"
+            <a
+              class="footer__phone animation-icon"
+              href="tel:+79969172670"
               ><span class="footer__text">Телефон: </span>8 (996) 917-26-70
             </a>
 
@@ -28,7 +33,10 @@
             />
           </address>
         </div>
-        <yandex-map :coords="map.coords" :zoom="map.zoomMap">
+        <yandex-map
+          :coords="map.coords"
+          :zoom="map.zoomMap"
+        >
           <ymap-marker
             :coords="placemark.coords"
             :icon="placemark.icon"
@@ -74,7 +82,7 @@ export default {
 <style lang="scss" scoped>
 .footer {
   padding: 60px 0 30px;
-  background-color: $purple;
+  background-color: $sweetie;
 
   &__inner {
     display: flex;

@@ -9,7 +9,10 @@
         </div>
       </div>
     </section>
-    <section class="we-have" id="we-have">
+    <section
+      class="we-have"
+      id="we-have"
+    >
       <div class="container">
         <div class="we-have__inner">
           <h2 class="we-have__title title">что у нас есть</h2>
@@ -164,7 +167,7 @@ export default {
   &__title {
     max-width: 600px;
     font-size: 60px;
-    color: $purple;
+    color: $sweetie;
     text-shadow: 5px 6px 3px $black;
 
     @include w576 {

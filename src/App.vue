@@ -1,7 +1,11 @@
 <template>
   <div>
     <j-s-mobile-menu />
-    <div class="wrapper" :class="{overlay: isOpen}" @click="closeMenu">
+    <div
+      class="wrapper"
+      :class="{overlay: isOpen}"
+      @click="closeMenu"
+    >
       <j-s-header />
       <main class="main">
         <router-view />
@@ -81,6 +85,12 @@ body {
 .main {
   margin-bottom: auto;
   padding-top: 170px;
+
+  &:has(.gallery) {
+    flex-grow: 1;
+    display: flex;
+  }
+
   @include w992 {
     padding-top: 240px;
   }

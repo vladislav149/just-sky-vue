@@ -82,7 +82,7 @@ export default {
   padding: 85px 15px 15px;
   position: fixed;
   border: 1px solid $black;
-  background-color: $purple;
+  background-color: $sweetie;
   width: 300px;
   min-height: 100vh;
   z-index: 100;
