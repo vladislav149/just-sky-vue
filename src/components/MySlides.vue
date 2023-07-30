@@ -51,25 +51,19 @@ export default {
 <style lang="scss" scoped>
 .vueperslides {
   height: 100%;
+}
 
-  ::v-deep &__inner {
-    height: 100%;
-  }
+:deep(.vueperslides__inner) {
+  height: 100%;
+}
 
-  ::v-deep &__parallax-wrapper {
-    height: 100%;
-    min-height: 500px;
-  }
+:deep(.vueperslides__parallax-wrapper) {
+  height: 100%;
+  min-height: 500px;
+}
 
-  ::v-deep &__arrow {
-    color: $sweetie;
-  }
-
-  ::v-deep &__bullets {
-    @include w768 {
-      display: none;
-    }
-  }
+:deep(.vueperslides__parallax__arrow) {
+  color: $sweetie;
 }
 
 .vueperslide {

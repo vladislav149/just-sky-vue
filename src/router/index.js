@@ -1,7 +1,4 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-
-Vue.use(VueRouter)
+import {createWebHistory, createRouter} from 'vue-router'
 
 const routes = [
   {
@@ -25,26 +22,27 @@ const routes = [
     component: () => import('@/views/Rules')
   },
   {
-    path: '*',
+    path: '/:any(.*)',
     name: 'pageNotFound',
     component: () => import('@/views/PageNotFound')
   }
 ]
 
-const scrollBehavior = function (to, from, savedPosition) {
+const scrollBehavior = function (to, _, savedPosition) {
   if (savedPosition) {
     return savedPosition
   } else if (to.hash) {
     return {
-      selector: to.hash,
+      el: to.hash,
       behavior: 'smooth'
     }
+  } else {
+    return {top: 0}
   }
-  return {x: 0, y: 0}
 }
 
-const router = new VueRouter({
-  mode: 'history',
+const router = createRouter({
+  history: createWebHistory(),
   routes,
   scrollBehavior
 })
